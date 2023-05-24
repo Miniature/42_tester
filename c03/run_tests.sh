@@ -1,0 +1,6 @@
+run_test ex00 ft_strcmp.c '0 0 1 0'
+run_test ex01 ft_strncmp.c '0 0 0 1 0'
+run_test ex02 ft_strcat.c 'hello world'
+run_test ex03 ft_strncat.c 'hello worldhello wor'
+run_test ex04 ft_strstr.c 'Bar BazBar Baz(null)0'
+run_test ex05 ft_strlcat.c '11hello wo11hello world'
