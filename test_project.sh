@@ -28,7 +28,7 @@ function run_test {
 	#/shrug
 	#`norminette "$PROJECT_PATH/$1"`
 	mkdir -p "$PROJECT_PATH/test_output"
-	cc -Wall -Wextra -Werror "$THIS_DIR/$PROJECT_ID/test_$1.c" "$PROJECT_PATH/$1/$2" -o "$PROJECT_PATH/test_output/a.out"
+	cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1.out" "$THIS_DIR/$PROJECT_ID/test_$1.c" "$PROJECT_PATH/$1/$2" -o "$PROJECT_PATH/test_output/a.out"
 	$PROJECT_PATH/test_output/a.out
 	output=`$PROJECT_PATH/test_output/a.out`
 	if [[ -z $3 ]]
@@ -43,7 +43,6 @@ function run_test {
 			printf "\n${RED}${BOLD}$1 fail: expected %s${NC}\n" "$3"
 		fi
 	fi
-	`rm $PROJECT_PATH/test_output/a.out`
 	tput sc
 	read -n 1 -srp "Press any key to continue..."
 	tput rc
