@@ -27,36 +27,28 @@ function run_test {
 	#norminette returns it cant find specific files that obviously exist when given a folder
 	#/shrug
 	#`norminette "$PROJECT_PATH/$1"`
-	#make sure the files are actually there
-	test $PROJECT_PATH/$1/$2.c
-	if [[ $? ]]
+	mkdir -p "$PROJECT_PATH/test_output"
+	cc -Wall -Wextra -Werror "$THIS_DIR/$PROJECT_ID/test_$1.c" "$PROJECT_PATH/$1/$2" -o "$PROJECT_PATH/test_output/a.out"
+	$PROJECT_PATH/test_output/a.out
+	output=`$PROJECT_PATH/test_output/a.out`
+	if [[ -z $3 ]]
 	then
-		mkdir -p "$PROJECT_PATH/test_output"
-		cc -Wall -Wextra -Werror "$THIS_DIR/$PROJECT_ID/test_$1.c" "$PROJECT_PATH/$1/$2" -o "$PROJECT_PATH/test_output/a.out"
-		$PROJECT_PATH/test_output/a.out
-		output=`$PROJECT_PATH/test_output/a.out`
-		if [[ -z $3 ]]
-		then
-			#echo "$output" > "$PROJECT_PATH/test_output/$1"
-			printf "\n${ORANGE}${BOLD}No automatic test defined.${NC}\n"
-		else
-			if [[ "$3" == "$output" ]]
-			then
-				printf "\n${GREEN}${BOLD}Got expected value for $1!${NC}\n"
-			else
-				printf "\n${RED}${BOLD}$1 fail: expected %s${NC}\n" "$3"
-			fi
-		fi
-		`rm $PROJECT_PATH/test_output/a.out`
+		#echo "$output" > "$PROJECT_PATH/test_output/$1"
+		printf "\n${ORANGE}${BOLD}No automatic test defined.${NC}\n"
 	else
-		printf "${RED}${BOLD}$1 not found.${NC}\n"
+		if [[ "$3" == "$output" ]]
+		then
+			printf "\n${GREEN}${BOLD}Got expected value for $1!${NC}\n"
+		else
+			printf "\n${RED}${BOLD}$1 fail: expected %s${NC}\n" "$3"
+		fi
 	fi
+	`rm $PROJECT_PATH/test_output/a.out`
 	tput sc
 	read -n 1 -srp "Press any key to continue..."
 	tput rc
 	tput el
 	printf "\n"
-
 }
 
 export -f run_test
