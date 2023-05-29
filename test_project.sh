@@ -70,6 +70,3 @@ export PROJECT_PATH=$2
 `mkdir -p "test_output"`
 
 sh "$THIS_DIR/$PROJECT_ID/run_tests.sh"
-
-#remove output directory if not used
-a=`rmdir "test_output"`
