@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:02:12 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/24 14:10:55 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/05/27 14:31:47 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ int	main(void)
 {
 	ualarm(100, 0);
 	ft_putnbr(5);
-	ft_putnbr(-5);
+	write(1, ",", 1);
+	ft_putnbr(-5000);
+	write(1, ",", 1);
 	ft_putnbr(INT_MAX);
+	write(1, ",", 1);
 	ft_putnbr(INT_MIN);
+	write(1, ",", 1);
 	ft_putnbr(INT_MIN + 1);
 }
