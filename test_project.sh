@@ -71,7 +71,7 @@ export -f test_function
 #	3..n: the filename (not including PROJECT_PATH) of the source files to compile (eg "ft_putchar.c")
 function test_program {
 	printf "Testing $1...\n"
-	compile "$1" "${@:3}"
+	compile "$1" "$PROJECT_PATH/$1/${@:3}"
 	compare_output "$1" "$2"
 	anykey_continue
 }
