@@ -17,7 +17,7 @@ export THIS_DIR=`dirname $0`
 #	2: the filename (not including PROJECT_PATH) of the source files to compile (eg "ft_putchar.c")
 #	3: (optional) a string to compare the program's stdout with
 #if argument 3 is not given then stdout will be directed to "$PROJECT_PATH/test_output/$1" for manual inspection
-function run_test {
+function test_function {
 	printf "Testing $1...\n"
 	#check to see if extra files have been included in the directory
 	if [[ `wc -w <<< "$2" | tr -d ' '` != `ls "$PROJECT_PATH/$1" | wc -l | tr -d ' '` ]]
@@ -50,7 +50,7 @@ function run_test {
 	printf "\n"
 }
 
-export -f run_test
+export -f test_function
 
 if [ -z $1 ]
 then
