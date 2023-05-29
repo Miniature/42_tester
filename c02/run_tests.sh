@@ -8,6 +8,6 @@ test_function ex06 ft_str_is_printable.c "1010"
 test_function ex07 ft_strupcase.c 'ABCXYZ091~[/'
 test_function ex08 ft_strlowcase.c 'abcxyz091~[/'
 test_function ex09 ft_strcapitalize.c 'This I97s A Long Thingthat Is~A String[/ 345a'
-test_function ex10 ft_strlcpy.c 'this is'
+test_function ex10 ft_strlcpy.c 'this i'
 test_function ex11 ft_putstr_non_printable.c '\0b\7fstring\1a'
 test_function ex12 ft_print_memory.c
