@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 14:56:36 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/22 16:06:12 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/05/29 13:18:38 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ int	main(void)
 	free(left);
 	left = strcpy(malloc(sizeof (char) * 50), "hello ");
 	printf("%i%s", ft_strlcat(left, right, 30), left);
+	free(left);
+	left = strcpy(malloc(sizeof (char) * 50), "hello ");
+	printf("%i%s", ft_strlcat(left, right, 10), left);
 	free(left);
 	free(right);
 }

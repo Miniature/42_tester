@@ -35,7 +35,7 @@ function compare_output {
 		then
 			printf "\n${GREEN}${BOLD}Got expected value for $1!${NC}\n"
 		else
-			printf "\n${RED}${BOLD}$1 fail: expected %s${NC}\n" "$3"
+			printf "\n${RED}${BOLD}$1 fail: expected\n%s${NC}\n" "$2"
 		fi
 	fi
 }
