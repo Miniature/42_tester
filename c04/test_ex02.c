@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:02:12 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/27 14:31:47 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/05/29 16:36:34 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_putnbr(int nb);
 int	main(void)
 {
 	ualarm(100, 0);
+	ft_putnbr(0);
+	write(1, ",", 1);
 	ft_putnbr(5);
 	write(1, ",", 1);
 	ft_putnbr(-5000);
