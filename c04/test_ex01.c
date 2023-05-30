@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:57:42 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/23 17:21:23 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/05/30 14:40:43 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@ int	main(void)
 {
 	ualarm(100, 0);
 	ft_putstr("hello\0world");
-	ft_putstr(NULL);
 	ft_putstr("hello world");
 }

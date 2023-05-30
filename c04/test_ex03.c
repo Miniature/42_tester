@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:09:59 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/25 16:02:36 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/05/30 14:41:32 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,9 @@ int	main(void)
 	sprintf(buffer_8, " \r \t   \f --++-+--%d", INT_MAX);
 	sprintf(buffer_9, "  \n  \v -+--+-%d", INT_MIN);
 	ualarm(100, 0);
-	printf("%i,%i,%i,%i,%i,%i,%i,%i,%i",
+	printf("%i,%i,%i,%i,%i,%i,%i,%i",
 		ft_atoi("44"),
 		ft_atoi("-53"),
-		ft_atoi(NULL),
 		ft_atoi("–2147483648sdfsfs4534533"),
 		ft_atoi("     -+++-+-+-+---5dsd"),
 		ft_atoi(buffer_6),

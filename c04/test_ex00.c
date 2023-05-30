@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:53:05 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/23 17:20:46 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/05/30 14:33:46 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int	ft_strlen(char *str);
 int	main(void)
 {
 	ualarm(100, 0);
-	printf("%i,%i,%i",
+	printf("%i,%i",
 		ft_strlen("hello world"),
-		ft_strlen("hello \0world"),
-		ft_strlen(NULL));
+		ft_strlen("hello \0world"));
 }
