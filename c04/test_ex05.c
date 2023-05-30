@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 15:37:58 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/27 14:38:09 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/05/30 11:40:29 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi_base(char *str, char *base);
 int	main(void)
 {
 	ualarm(100, 0);
-	printf("%i,%i,%i,%i,%i,%i,%i,%i,%i",
+	printf("%i,%i,%i,%i,%i,%i,%i,%i,%i,%i",
 		ft_atoi_base("555", "0123456789"),
 		ft_atoi_base("-bccca", "abcd"),
 		ft_atoi_base(NULL, "abcdef"),
@@ -28,5 +28,6 @@ int	main(void)
 		ft_atoi_base("sdfuids", "2346"),
 		ft_atoi_base("500", "0123454321"),
 		ft_atoi_base("\r\v\t\n\f 5", "012345"),
-		ft_atoi_base("-2147483648", "0123456789"));
+		ft_atoi_base("-2147483648", "0123456789"),
+		ft_atoi_base("345783", "01345-"));
 }
