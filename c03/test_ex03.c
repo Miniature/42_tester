@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 13:59:30 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/22 14:48:17 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/05/30 13:52:46 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ int	main(void)
 	char*left;
 	char*right;
 
-	left = strcpy(malloc(sizeof (char) * 50), "hello ");
+	left = strcpy(malloc(sizeof (char) * 50), "hello aaaaaaaaaaaaaaaaaaa");
+	left[6] = '\0';
 	right = strcpy(malloc(sizeof (char) * 50), "world");
-	printf("%s", ft_strncat(left, right, 6));
+	printf("%s,%c,", ft_strncat(left, right, 6), left[12]);
 	free(left);
-	left = strcpy(malloc(sizeof (char) * 50), "hello ");
-	printf("%s", ft_strncat(left, right, 3));
+	left = strcpy(malloc(sizeof (char) * 50), "hello aaaaaaaaaaaaaaaaaaa");
+	left[6] = '\0';
+	printf("%s,%c", ft_strncat(left, right, 3), left[10]);
 	free(left);
 }
