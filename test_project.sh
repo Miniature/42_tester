@@ -22,20 +22,21 @@ export -f compile
 
 #compares the output of program with given expected output and prints result
 #	$1 is path to program to test
-#	$2 is expected output
+#	$2 is args to be passed to the program (can be "")
+#	$3 is expected output
 #	if $2 is "" or undefined then
 function compare_output {
-	$PROJECT_PATH/test_output/$1.out
-	output=`$PROJECT_PATH/test_output/$1.out`
-	if [[ -z $2 || $2 == "" ]]
+	eval "$PROJECT_PATH/test_output/$1.out $2"
+	output=`eval "$PROJECT_PATH/test_output/$1.out $2"`
+	if [[ -z $3 || $3 == "" ]]
 	then
 		printf "\n${ORANGE}${BOLD}No automatic test defined.${NC}\n"
 	else
-		if [[ "$2" == "$output" ]]
+		if [[ "$3" == "$output" ]]
 		then
 			printf "\n${GREEN}${BOLD}Got expected value for $1!${NC}\n"
 		else
-			printf "\n${RED}${BOLD}$1 fail: expected\n%s${NC}\n" "$2"
+			printf "\n${RED}${BOLD}$1 fail: expected\n%s${NC}\n" "$3"
 		fi
 	fi
 }
@@ -59,7 +60,7 @@ export -f anykey_continue
 function test_function {
 	printf "Testing $1...\n"
 	compile $1 "$PROJECT_PATH/$1/$2" "$THIS_DIR/$PROJECT_ID/test_$1.c"
-	compare_output "$1" "$3"
+	compare_output "$1" "" "$3"
 	anykey_continue
 }
 export -f test_function
@@ -67,12 +68,13 @@ export -f test_function
 #similar to test_function above, but does not add a test c file to compilation and input is formatted differently
 #takes 2 or more arguments ->
 #	1: label of the excersize ("ex05", etc)
-#	2: a string to compare the program's stdout with
-#	3..n: the filename (not including PROJECT_PATH) of the source files to compile (eg "ft_putchar.c")
+#	2: a space-separated list of files to compile with
+#	3: (optional) args to call the program with (can be "")
+#	4: (optional) expected output
 function test_program {
 	printf "Testing $1...\n"
-	compile "$1" "$PROJECT_PATH/$1/${@:3}"
-	compare_output "$1" "$2"
+	compile "$1" "$PROJECT_PATH/$1/$2"
+	compare_output "$1" "$3" "$4"
 	anykey_continue
 }
 export -f test_program
