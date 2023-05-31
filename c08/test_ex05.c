@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 16:23:56 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/31 16:27:19 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/05/31 16:29:46 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(void)
 	tabs[0].str = "a";
 	tabs[1].copy = "bb";
 	tabs[1].size = 2;
-	tabs[1].str = "bb";
+	tabs[1].str = "cc";
 	tabs[2].copy = NULL;
 	tabs[2].size = 0;
 	tabs[2].str = NULL;
