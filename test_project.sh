@@ -12,11 +12,13 @@ export NC="$(tput sgr0)"
 export THIS_DIR=`dirname $0`
 
 #compiles a program for ex$1 with c files $2....$n
-#	$1 is the exercise (for naming the compiled program)
+#	$1 is the exercise
 #	$2...$n are the files to compile
 function compile {
+	void=`rm $PROJECT_PATH/test_output/$1.out 2>&1`
 	mkdir -p "$PROJECT_PATH/test_output"
-	cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1.out" "${@:2}"
+	#cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1.out" -I "$PROJECT_PATH/" -F "$PROJECT_PATH/" "${@:2}"
+	cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1.out" -I"$PROJECT_PATH/$1" "${@:2}"
 }
 export -f compile
 
@@ -24,7 +26,7 @@ export -f compile
 #	$1 is path to program to test
 #	$2 is args to be passed to the program (can be "")
 #	$3 is expected output
-#	if $2 is "" or undefined then
+#	if $2 is "" or undefined then display a warning
 function compare_output {
 	eval "$PROJECT_PATH/test_output/$1.out $2"
 	output=`eval "$PROJECT_PATH/test_output/$1.out $2"`
@@ -64,6 +66,18 @@ function test_function {
 	anykey_continue
 }
 export -f test_function
+
+#takes 1 or 2 arguments ->
+#	1: label of the excersize ("ex05", etc)
+#	2: (optional) a string to compare the program's stdout with
+#if argument 3 is not given then stdout will be directed to "$PROJECT_PATH/test_output/$1" for manual inspection
+function test_header {
+	printf "Testing $1...\n"
+	compile $1 "$THIS_DIR/$PROJECT_ID/test_$1.c"
+	compare_output "$1" "" "$2"
+	anykey_continue
+}
+export -f test_header
 
 #similar to test_function above, but does not add a test c file to compilation and input is formatted differently
 #takes 2 or more arguments ->
