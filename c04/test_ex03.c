@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:09:59 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/30 14:50:35 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/06/03 14:14:00 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void)
 	sprintf(buffer_6, "%d", INT_MAX);
 	sprintf(buffer_7, "%d", INT_MIN);
 	sprintf(buffer_8, " \r \t   \f --++-+--%d", INT_MAX);
-	sprintf(buffer_9, "  \n  \v -+--+-%d", 'M');
+	sprintf(buffer_9, "  \n  \v -+--+-%d", '10');
 	ualarm(100, 0);
 	printf("%i,%i,%i,%i,%i,%i,%i,%i",
 		ft_atoi("44"),

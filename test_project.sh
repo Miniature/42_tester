@@ -13,12 +13,14 @@ export THIS_DIR=`dirname $0`
 
 #compiles a program for ex$1 with c files $2....$n
 #	$1 is the exercise
-#	$2...$n are the files to compile
+#	$2 is files to compile
 function compile {
 	void=`rm $PROJECT_PATH/test_output/$1.out 2>&1`
 	mkdir -p "$PROJECT_PATH/test_output"
+	cfiles=$2
+	cfiles=${cfiles[*]}
 	#cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1.out" -I "$PROJECT_PATH/" -F "$PROJECT_PATH/" "${@:2}"
-	cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1.out" -I"$PROJECT_PATH/$1" "${@:2}"
+	cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1.out" -I"$PROJECT_PATH/$1" $cfiles
 }
 export -f compile
 
@@ -56,12 +58,20 @@ export -f anykey_continue
 #tries to be as accurate as possible to an actual moulinette test on an excersize with a single function in it
 #takes 2 or 3 arguments ->
 #	1: label of the excersize ("ex05", etc)
-#	2: the filename (not including PROJECT_PATH) of the source files to compile (eg "ft_putchar.c")
+#	2: array of filenames (not including PROJECT_PATH) of the source files to compile (eg "ft_putchar.c")
 #	3: (optional) a string to compare the program's stdout with
 #if argument 3 is not given then stdout will be directed to "$PROJECT_PATH/test_output/$1" for manual inspection
 function test_function {
 	printf "Testing $1...\n"
-	compile $1 "$PROJECT_PATH/$1/$2" "$THIS_DIR/$PROJECT_ID/test_$1.c"
+	#compile $1 "$PROJECT_PATH/$1/$2" "$THIS_DIR/$PROJECT_ID/test_$1.c"
+	cfile_path="$PROJECT_PATH/$1/"
+	if [[ -z $2 ]]
+	then
+		cfiles="$THIS_DIR/$PROJECT_ID/test_$1.c"
+	else
+		cfiles="$PROJECT_PATH/$1/${2// / $PROJECT_PATH/$1//} $THIS_DIR/$PROJECT_ID/test_$1.c"
+	fi
+	compile $1 "$cfiles"
 	compare_output "$1" "" "$3"
 	anykey_continue
 }
