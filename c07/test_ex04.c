@@ -6,15 +6,15 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 12:25:02 by wdavey            #+#    #+#             */
-/*   Updated: 2023/06/01 12:26:04 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/06/03 13:45:35 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char *ft_convert_base(char *nbr, char *base_from, char *base_to);
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
 
 int	main(void)
 {
-	printf("%s", ft_convert_base("255", "0123456789", "0123456789abcdef"));
+	printf("%s", ft_convert_base("-255", "0123456789", "0123456789abcdef"));
 }
