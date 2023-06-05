@@ -82,7 +82,7 @@ export -f test_function
 #	2: (optional) a string to compare the program's stdout with
 #if argument 3 is not given then stdout will be directed to "$PROJECT_PATH/test_output/$1" for manual inspection
 function test_header {
-	printf "Testing $1...\n"
+	printf "${ORANGE}${BOLD}Testing $1...${NC}\n"
 	compile $1 "$THIS_DIR/$PROJECT_ID/test_$1.c"
 	compare_output "$1" "" "$2"
 	anykey_continue
