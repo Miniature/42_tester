@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:50:16 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/31 16:00:06 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:54:52 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef struct s_stock_str
 	char	*copy;
 }	t_stock_str;
 
-struct s_stock_str *ft_strs_to_tab(int ac, char **av);
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av);
 
 int	main(void)
 {

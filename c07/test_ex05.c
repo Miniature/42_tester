@@ -6,13 +6,13 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 12:26:54 by wdavey            #+#    #+#             */
-/*   Updated: 2023/06/01 12:28:52 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:52:38 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char **ft_split(char *str, char *charset);
+char	**ft_split(char *str, char *charset);
 
 int	main(void)
 {

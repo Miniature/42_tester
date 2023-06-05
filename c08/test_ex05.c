@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 16:23:56 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/31 16:29:46 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:55:07 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,5 @@ int	main(void)
 	tabs[2].copy = NULL;
 	tabs[2].size = 0;
 	tabs[2].str = NULL;
-
 	ft_show_tab(tabs);
 }

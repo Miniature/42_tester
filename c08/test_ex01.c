@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:35:34 by wdavey            #+#    #+#             */
-/*   Updated: 2023/06/05 11:04:17 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:57:35 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 #include <stdio.h>
 
-t_bool ft_is_even(int nbr)
+t_bool	ft_is_even(int nbr)
 {
-	return ((EVEN(nbr)) ? TRUE : FALSE);
+	return (EVEN(nbr));
 }
 
-int main(void)
+int	main(void)
 {
 	printf("%d,%d,%d,%d,%s,%s,%d",
 		TRUE,
@@ -29,5 +29,6 @@ int main(void)
 		EVEN_MSG,
 		ODD_MSG,
 		SUCCESS);
-	write(1, "a", 1);
+	fflush(stdout);
+	write(1, ",a", 2);
 }

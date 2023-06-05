@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 13:59:30 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/31 18:16:11 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:50:46 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb);
 
 int	main(void)
 {
-	char*left;
-	char*right;
+	char	*left;
+	char	*right;
 
 	left = strcpy(malloc(sizeof (char) * 50), "hello aaaaaaaaaaaaaaaaaaa");
 	left[6] = '\0';

@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:44:07 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/31 15:48:40 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/06/05 15:54:38 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	set_point(t_point *point)
 
 int	main(void)
 {
-	t_point point;
+	t_point	point;
 
 	set_point(&point);
 	printf("%d,%d", point.x, point.y);
