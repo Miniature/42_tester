@@ -118,8 +118,9 @@ export PROJECT_ID=$1
 export PROJECT_PATH=$2
 
 #setup output directory
-`mkdir -p "test_output"`
-
+`mkdir -p "test_output"`printf "${ORANGE}${BOLD}Norminette:${NC}\n"
+(cd $PROJECT_PATH && norminette -R CheckDefine)
+printf "\n"
 sh "$THIS_DIR/$PROJECT_ID/run_tests.sh"
 
 #reference for maybe getting this stuff working later (probably not)
