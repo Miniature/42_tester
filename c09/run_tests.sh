@@ -4,11 +4,17 @@ printf "${ORANGE}${BOLD}Testing ex01...${NC}\n"
 `cp -R $THIS_DIR/$PROJECT_ID/srcs $PROJECT_PATH/ex01`
 printf "\tmake all\n"
 (cd $PROJECT_PATH/ex01 && make all)
-touch $PROJECT_PATH/ex01/srcs/ft_putchar.c
-printf "\n\tmake clean\n"
-(cd $PROJECT_PATH/ex01 && make clean)
+printf .
+sleep 0.5
+printf .
+sleep 0.5
+printf .
+sleep 0.5
+touch -m $PROJECT_PATH/ex01/srcs/ft_putchar.c
 printf "\n\tmake libft.a\n"
 (cd $PROJECT_PATH/ex01 && make libft.a)
+printf "\n\tmake clean\n"
+(cd $PROJECT_PATH/ex01 && make clean)
 printf "\n\tmake re\n"
 (cd $PROJECT_PATH/ex01 && make re)
 printf "\n\tmake fclean\n"
