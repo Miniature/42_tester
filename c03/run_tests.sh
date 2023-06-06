@@ -1,3 +1,4 @@
+norm
 test_function ex00 ft_strcmp.c '0 0 1 1'
 test_function ex01 ft_strncmp.c '0 0 0 1 1'
 test_function ex02 ft_strcat.c 'hello world'

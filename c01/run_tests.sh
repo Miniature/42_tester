@@ -1,3 +1,4 @@
+norm
 test_function ex00 ft_ft.c "42"
 test_function ex01 ft_ultimate_ft.c "42"
 test_function ex02 ft_swap.c "15 10"

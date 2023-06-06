@@ -1,3 +1,4 @@
+norm
 test_function ex00 ft_putchar.c "a"
 test_function ex01 ft_print_alphabet.c "abcdefghijklmnopqrstuvwxyz"
 test_function ex02 ft_print_reverse_alphabet.c "zyxwvutsrqponmlkjihgfedcba"

@@ -103,6 +103,15 @@ function test_program {
 }
 export -f test_program
 
+#runs norminette on project dir
+#$1 is flags to be passed to norminette
+function norm {
+	printf "${ORANGE}${BOLD}Norminette:${NC}\n"
+	(cd $PROJECT_PATH && norminette $1)
+	printf "\n"
+}
+export -f norm
+
 if [ -z $1 ]
 then
 	echo "Invalid project id selected."
@@ -118,17 +127,6 @@ export PROJECT_ID=$1
 export PROJECT_PATH=$2
 
 #setup output directory
-`mkdir -p "test_output"`printf "${ORANGE}${BOLD}Norminette:${NC}\n"
-(cd $PROJECT_PATH && norminette -R CheckDefine)
-printf "\n"
+`mkdir -p "test_output"`
+#go
 sh "$THIS_DIR/$PROJECT_ID/run_tests.sh"
-
-#reference for maybe getting this stuff working later (probably not)
-	#check to see if extra files have been included in the directory
-	#if [[ `wc -w <<< "$2" | tr -d ' '` != `ls "$PROJECT_PATH/$1" | wc -l | tr -d ' '` ]]
-	#then
-	#	printf "${RED}${BOLD}Wrong number of files in the directory.${NC}\n"
-	#fi
-	#norminette returns it cant find specific files that obviously exist when given a folder
-	#/shrug
-	#`norminette "$PROJECT_PATH/$1"`

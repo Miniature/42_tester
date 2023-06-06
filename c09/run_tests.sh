@@ -1,4 +1,8 @@
-printf "\n${ORANGE}${BOLD}No test defined for ex00.${NC}\n\n"
+norm
+printf "${ORANGE}${BOLD}Testing ex00...${NC}\n"
+`cp -R $THIS_DIR/$PROJECT_ID/srcs $PROJECT_PATH/ex00`
+(cd $PROJECT_PATH/ex00/srcs && sh ../libft_creator.sh)
+printf "${ORANGE}${BOLD}No automatic test defined.${NC}\n\n"
 
 printf "${ORANGE}${BOLD}Testing ex01...${NC}\n"
 `cp -R $THIS_DIR/$PROJECT_ID/srcs $PROJECT_PATH/ex01`

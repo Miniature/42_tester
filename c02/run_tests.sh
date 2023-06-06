@@ -1,3 +1,4 @@
+norm
 test_function ex00 ft_strcpy.c "hello world"
 test_function ex01 ft_strncpy.c "hello world00"
 test_function ex02 ft_str_is_alpha.c "1100"

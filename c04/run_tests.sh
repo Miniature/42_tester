@@ -1,3 +1,4 @@
+norm
 test_function ex00 ft_strlen.c '11,6'
 test_function ex01 ft_putstr.c 'hellohello world'
 test_function ex02 ft_putnbr.c '0,5,-5000,2147483647,-2147483648,10'

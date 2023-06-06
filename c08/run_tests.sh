@@ -1,3 +1,4 @@
+norm '-R CheckDefine'
 test_header ex00 'a'
 test_header ex01
 test_header ex02 '5,5'
