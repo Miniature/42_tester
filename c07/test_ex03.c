@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:07:19 by wdavey            #+#    #+#             */
-/*   Updated: 2023/06/06 14:43:21 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/06/06 14:44:44 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(void)
 	sep = malloc(sizeof(char) * SEP_LEN);
 	for(int i = 0; i < SEP_LEN; i++)
 	{
-		sep[i] = (i % 20) + '0';
+		sep[i] = (i % 10) + '0';
 	}
 	str = ft_strjoin(STR_NUM, strs, sep);
 	printf("%s", str);
