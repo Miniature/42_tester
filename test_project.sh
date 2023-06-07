@@ -20,7 +20,7 @@ function compile {
 	cfiles=$2
 	cfiles=${cfiles[*]}
 	#cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1.out" -I "$PROJECT_PATH/" -F "$PROJECT_PATH/" "${@:2}"
-	cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1.out" -I"$PROJECT_PATH/$1" $cfiles
+	cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1" -I"$PROJECT_PATH/$1" $cfiles
 }
 export -f compile
 
@@ -30,8 +30,8 @@ export -f compile
 #	$3 is expected output
 #	if $2 is "" or undefined then display a warning
 function compare_output {
-	eval "$PROJECT_PATH/test_output/$1.out $2"
-	output=`eval "$PROJECT_PATH/test_output/$1.out $2"`
+	eval "$PROJECT_PATH/test_output/$1 $2"
+	output=`eval "$PROJECT_PATH/test_output/$1 $2"`
 	if [[ -z $3 || $3 == "" ]]
 	then
 		printf "\n${ORANGE}${BOLD}No automatic test defined.${NC}\n"
@@ -71,7 +71,7 @@ function test_function {
 	else
 		cfiles="$PROJECT_PATH/$1/${2// / $PROJECT_PATH/$1//} $THIS_DIR/$PROJECT_ID/test_$1.c"
 	fi
-	compile $1 "$cfiles"
+	compile "$1" "$cfiles"
 	compare_output "$1" "" "$3"
 	anykey_continue
 }
@@ -83,7 +83,7 @@ export -f test_function
 #if argument 3 is not given then stdout will be directed to "$PROJECT_PATH/test_output/$1" for manual inspection
 function test_header {
 	printf "${ORANGE}${BOLD}Testing $1...${NC}\n"
-	compile $1 "$THIS_DIR/$PROJECT_ID/test_$1.c"
+	compile "$1" "$THIS_DIR/$PROJECT_ID/test_$1.c"
 	compare_output "$1" "" "$2"
 	anykey_continue
 }
@@ -102,6 +102,21 @@ function test_program {
 	anykey_continue
 }
 export -f test_program
+
+#similar to above once again, but relies on make to compile the program
+#	$1: exercise name (ex00 etc)
+#	$2: program name (ft_cat etc)
+#	$3:	args to call program with
+#	$4:	expected output
+function test_program_with_make {
+	printf "Testing $1...\n"
+	(cd $PROJECT_PATH/$1 && make -s all)
+	cp "$PROJECT_PATH/$1/$2" "$PROJECT_PATH/test_output"
+	(cd $PROJECT_PATH/$1 && make -s fclean)
+	compare_output "$2" "$3" "$4"
+	anykey_continue
+}
+export -f test_program_with_make
 
 #runs norminette on project dir
 #$1 is flags to be passed to norminette
