@@ -1,7 +1,8 @@
 norm
 printf "${ORANGE}${BOLD}Testing ex00...${NC}\n"
 (cd $PROJECT_PATH/ex00 && sh libft_creator.sh && ar -t libft.a)
-printf "${ORANGE}${BOLD}No automatic test defined.${NC}\n\n"
+printf "${ORANGE}${BOLD}No automatic test defined.${NC}\n"
+anykey_continue
 
 printf "${ORANGE}${BOLD}Testing ex01...${NC}\n"
 `cp -R $THIS_DIR/$PROJECT_ID/srcs $PROJECT_PATH/ex01`
