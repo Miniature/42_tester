@@ -20,7 +20,7 @@ function compile {
 	cfiles=$2
 	cfiles=${cfiles[*]}
 	#cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1.out" -I "$PROJECT_PATH/" -F "$PROJECT_PATH/" "${@:2}"
-	cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1" -I"$PROJECT_PATH/$1" $cfiles
+	cc -Wall -Wextra -Werror -o "$PROJECT_PATH/test_output/$1" -I"$THIS_DIR/$PROJECT_ID/$1" -I"$PROJECT_PATH/$1" $cfiles
 }
 export -f compile
 
