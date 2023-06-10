@@ -6,13 +6,13 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 19:56:32 by wdavey            #+#    #+#             */
-/*   Updated: 2023/06/03 16:23:33 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/06/10 13:15:39 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft.h"
 
 void	ft_putchar(char c)
 {
-	(void)c;
+	write(1, &c, 1);
 }

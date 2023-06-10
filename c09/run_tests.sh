@@ -5,7 +5,8 @@ printf "${ORANGE}${BOLD}No automatic test defined.${NC}\n"
 anykey_continue
 
 printf "${ORANGE}${BOLD}Testing ex01...${NC}\n"
-`cp -R $THIS_DIR/$PROJECT_ID/srcs $PROJECT_PATH/ex01`
+`cp -R $THIS_DIR/$PROJECT_ID/ex01/srcs $PROJECT_PATH/ex01`
+`cp -R $THIS_DIR/$PROJECT_ID/ex01/includes $PROJECT_PATH/ex01`
 printf "\tmake all\n"
 (cd $PROJECT_PATH/ex01 && make all)
 printf .
