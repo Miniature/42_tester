@@ -6,7 +6,7 @@
 /*   By: wdavey <wdavey@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:57:14 by wdavey            #+#    #+#             */
-/*   Updated: 2023/05/25 14:58:47 by wdavey           ###   ########.fr       */
+/*   Updated: 2023/06/11 13:48:32 by wdavey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ int	ft_is_prime(int nb);
 
 int	main(void)
 {
-	printf("%i,%i,%i,%i",
+	printf("%i,%i,%i,%i,%i",
 		ft_is_prime(4),
 		ft_is_prime(1),
+		ft_is_prime(2),
 		ft_is_prime(5),
 		ft_is_prime(-2));
 }
